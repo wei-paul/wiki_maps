@@ -14,3 +14,26 @@ body {
     rgba(163, 208, 219, 1) 100%
   );
 }
+
+//Container for holding interactive maps/buttons
+.container_box {
+  display: flex;
+  justify-content: center;
+  align-items: center;;
+  grid-template-columns: 40% auto;
+  gap: 2rem;
+  margin: 0 auto;
+  border: 1px solid var(--accentColor);
+  padding: 1rem;
+
+}
+
+//section id create MAP
+#create_map {
+  display: flex;
+  flex-direction: column;
+}
+
+.block {
+  margin: 5px;
+}
