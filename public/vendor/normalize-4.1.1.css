@@ -28,7 +28,7 @@ body {
  * 2. Add the correct display in IE.
  */
 
-/* article,
+article,
 aside,
 details,
 
@@ -45,9 +45,9 @@ summary {
 
   display: block;
 }
-^commented this out for now, don't understand and can't block diplay
 
-*/
+
+
 
 /**
  * Add the correct display in IE 9-.
