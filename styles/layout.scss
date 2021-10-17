@@ -2,5 +2,15 @@
 
 body,
 html {
+  flex-direction: column;
   margin: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 150px;
+  height: 200px;
+  width: 100%;
 }

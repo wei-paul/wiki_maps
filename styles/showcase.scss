@@ -1,10 +1,28 @@
 #showcase {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
 }
 
 .thumbnail {
-  display: flex;
   font-style: italic;
+  height: 120px;
+  width: 170px;
+  flex-direction: row;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: solid;
+}
+
+#scrollbutton {
+  margin-left: 100px;
+
+}
+
+#scrollbutton2 {
+  margin-right: 100px;
 }
