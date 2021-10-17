@@ -2,24 +2,23 @@
 #create_map {
   display: flex;
   flex-direction: column;
+  width: 200px;
 }
 
 .block {
-  margin: 5px;
+  height: 90px;
 }
 
 //Container for holding interactive maps/buttons
 .container_box {
   display: flex;
   height: 450px;
-  // justify-content: center;
   align-items: center;;
   grid-template-columns: 40% auto;
   gap: 2rem;
-  margin-top: 100px;
+  margin-top: 75px;
   margin-right: 100px;
   margin-left: 100px;
-  border: 1px solid var(--accentColor);
-  padding: 1rem;
-  border: solid;
+  // border: solid;
 }
+
