@@ -2,19 +2,95 @@
 <html lang="en">
 
 <head>
-  <title>Home Page</title>
+  <!-- Meta Information  -->
+  <title>Wiki Maps</title>
+  <header>wikimap</header>
 
-  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-  <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/main.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <!-- External CSS -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+  <script
+    src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin="">
+  </script>
 
-  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-  <script type="text/javascript" src="/scripts/app.js"></script>
+
+
+  <!-- App CSS -->
+  <link
+    rel="stylesheet"
+    href="/vendor/normalize-4.1.1.css"
+    type="text/css" />
+  <link
+    rel="stylesheet"
+    href="/vendor/border-box.css"
+    type="text/css" />
+  <link
+    rel="stylesheet"
+    href="/styles/main.css"
+    type="text/css" />
+  <link
+    rel="stylesheet"
+    href="/styles/layout.css"
+    type="text/css" />
+  <link
+    rel="stylesheet"
+    href="/styles/showcase.css"
+    type="text/css" />
+
+  <!-- External JS -->
+
+  <!-- App JS -->
+  <script
+    type="text/javascript"
+    src="/vendor/jquery-3.0.0.js">
+  </script>
+  <script
+    type="text/javascript"
+    src="/scripts/app.js">
+  </script>
 </head>
 
+
+
 <body>
-  <h1>Have fun! 🥔</h1>
+  <!-- Page Header -->
+  <header
+  id="page_head">
+  </header>
+
+  <!-- Page-specific (main) content here -->
+  <main
+    class="container">
+
+    <!-- Showcase Horizontal Scroll -->
+    <div>
+      <section id="showcase">
+        <div class="thumbnail">text</div>
+        <div class="thumbnail">text2</div>
+        <div class="thumbnail">text3</div>
+      </section>
+     </div>
+
+    <div>
+      <section
+        id="create_map">
+        <div
+          id="map"></div>
+      </section>
+    </div>
+
+    <div>
+      <section
+        id="footer">
+      </section>
+    </div>
+
+  </main>
 </body>
 
 </html>
