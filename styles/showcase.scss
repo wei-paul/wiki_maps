@@ -19,7 +19,33 @@
   padding-top: 10px;
   padding-bottom: 10px;
   display: inline-block;
+  // border: solid;
+}
+
+.thumbnailTitle {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 175px;
+}
+
+.thumbnailButton {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 175px;
+}
+
+.thumbnailCategory {
+  display: flex;
+}
+
+.thumbnailImage {
+  display: flex;
+  margin: 10ev;
   border: solid;
+  height: 125px;
+  width: 100%;
 }
 
 #scrollButtonLeft {
@@ -42,9 +68,9 @@
 }
 
 .fa-angle-left {
-  color:tomato;
+  color:tomato !important;
 }
 
 .fa-angle-right {
-  color:tomato;
+  color:tomato !important;
 }
