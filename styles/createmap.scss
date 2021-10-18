@@ -9,10 +9,10 @@
   height: 90px;
 }
 
+
 //Container for holding interactive maps/buttons
 .container_box {
   display: flex;
-  height: 450px;
   align-items: center;;
   grid-template-columns: 40% auto;
   gap: 2rem;
@@ -20,5 +20,46 @@
   margin-right: 100px;
   margin-left: 100px;
   // border: solid;
+}
+
+.block {
+  display: inline-block;
+  padding:0.7em 1.4em;
+  margin:0 0.3em 0.3em 0;
+  border-radius:0.15em;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-family:'Roboto',sans-serif;
+  text-transform:uppercase;
+  font-weight:400;
+  color:#FFFFFF;
+  background-color:#13b982;
+  box-shadow:inset 0 -0.6em 0 -0.35em rgba(0,0,0,0.17);
+  text-align:center;
+  position:relative;
+  }
+
+.block:hover {
+  cursor: pointer;
+  box-shadow:
+  -7px -7px 20px 8px #fff9,
+  -4px -4px 10px 8px #fff9,
+}
+
+.block:active{
+  top:0.1em;
+}
+
+
+//map
+
+.map_container {
+  width: 100%;
+}
+
+
+#map2 {
+  height: 473px;
+  width: 100%px;
 }
 
