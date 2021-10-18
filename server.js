@@ -57,7 +57,7 @@ app.get("/editMap", (req, res) => {
   res.render("editMap");
 });
 
-app.post("/", (req, res) => {
+app.post("/editMap", (req, res) => {
   res.redirect("/editMap");
 });
 
