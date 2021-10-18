@@ -54,11 +54,11 @@ app.get("/", (req, res) => {
 });
 
 app.get("/editMap", (req, res) => {
-
-
-
-
   res.render("editMap");
+});
+
+app.post("/", (req, res) => {
+  res.redirect("/editMap");
 });
 
 app.listen(PORT, () => {
