@@ -15,6 +15,8 @@ $('#scrollButtonRight').click(function(event) {
 });
 }
 
+
+
 // $('#scrollButtonLeft').on("click", () => {
 //   $('#showcase').scrollLeft()
 // }, "fast");
