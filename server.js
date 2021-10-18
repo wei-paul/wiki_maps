@@ -8,6 +8,7 @@ const express = require("express");
 const app = express();
 const morgan = require("morgan");
 
+
 // PG database client/connection setup
 const { Pool } = require("pg");
 const dbParams = require("./lib/db.js");
@@ -38,7 +39,6 @@ app.use(express.static("public"));
 const usersRoutes = require("./routes/users");
 const mapsRoutes = require("./routes/maps");
 
-
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
@@ -60,7 +60,6 @@ app.get("/editMap", (req, res) => {
 app.post("/", (req, res) => {
   res.redirect("/editMap");
 });
-
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
