@@ -1,28 +1,38 @@
 #showcase {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
+  flex-wrap: nowrap;
   width: 100%;
+  overflow-x: hidden;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .thumbnail {
+  display:flex;
+  flex: 0 0 auto;
   font-style: italic;
-  height: 120px;
-  width: 170px;
+  height: 200px;
+  width: 33.33%;
   flex-direction: row;
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 10px;
   padding-bottom: 10px;
+  display: inline-block;
   border: solid;
 }
 
-#scrollbutton {
+#scrollButtonLeft {
   margin-left: 100px;
-
 }
 
-#scrollbutton2 {
+#scrollButtonRight {
   margin-right: 100px;
+}
+
+.highlight {
+  border: solid;
+  box-shadow: inset;
+  height: 100px;
+  width: 50px;
 }

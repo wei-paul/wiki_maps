@@ -52,6 +52,7 @@
   <!-- External JS -->
 
 
+
   <!-- App JS -->
   <script
     type="text/javascript"
@@ -64,6 +65,11 @@
   <script
     type="text/javascript"
     src="/scripts/showcase_scrollbar.js">
+  </script>
+  <script>
+    $(document).ready(function(){
+      scrollbar()
+    });
   </script>
 </head>
 
@@ -84,15 +90,18 @@
 
     <!-- Showcase Horizontal Scroll -->
     <div class="container">
-    <button id="scrollbutton">
+    <button id="scrollButtonLeft">
     </button>
     <div
       id="showcase">
         <div class="thumbnail">text</div>
         <div class="thumbnail">text2</div>
         <div class="thumbnail">text3</div>
+        <div class="thumbnail">text4</div>
+        <div class="thumbnail">text5</div>
+        <div class="thumbnail">text6</div>
      </div>
-     <button id="scrollbutton2">
+     <button id="scrollButtonRight">
     </button>
       </section>
     </div>
