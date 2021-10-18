@@ -24,10 +24,14 @@
 
 #scrollButtonLeft {
   margin-left: 100px;
+  background: transparent;
+  border: 0;
 }
 
 #scrollButtonRight {
   margin-right: 100px;
+  background: transparent;
+  border: 0;
 }
 
 .highlight {
@@ -35,4 +39,12 @@
   box-shadow: inset;
   height: 100px;
   width: 50px;
+}
+
+.fa-angle-left {
+  color:tomato;
+}
+
+.fa-angle-right {
+  color:tomato;
 }
