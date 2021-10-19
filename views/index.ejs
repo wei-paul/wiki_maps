@@ -76,6 +76,10 @@
     type="text/javascript"
     src="/scripts/showcase_scrollbar.js">
   </script>
+  <script
+  type="text/javascript"
+  src="/scripts/createmap.js">
+</script>
   <script>
     $(document).ready(function(){
       scrollbar()
@@ -105,6 +109,7 @@
     </button>
     <div
       id="showcase">
+
       <div class="thumbnail">
           <form
             action="/editMap"
@@ -195,20 +200,29 @@
     <!-- CONTAINER for CONTAINING BUTTONS/INTERACTIVE MAPS -->
     <div class="container_box">
       <div id="createmapbuttons">
-          <section id="create_map">
-            <!-- <div id="map"></div> -->
-              <button type="button" class="block">Food</button>
-              <button type="button" class="block">Hikes</button>
-              <button type="button" class="block">Landmarks</button>
-              <button type="button" class="block">Schools</button>
-              <button type="button" class="block">Parks</button>
+        <section id="create_map">
+          <!-- <div id="map"></div> -->
+          <button class="block">Food</button>
+          <button class="block">Hikes</button>
+          <button class="block">Landmarks</button>
+          <button class="block">Schools</button>
+          <button class="block">Parks</button>
+        </section>
 
-          </section>
+      </div>
+      <div class="map_container">
+      <div id="map2">
+      <div id="titleTable">
+        <form
+          action="/"
+          method="POST">
+          <div>
+          <input type="text" value="Title">
+          <input type="submit" value="save">
+          </div>
+        </form>
+      </div>
 
-        </div>
-    <div class="map_container">
-
-     <div id="map2">
 
     </div>
 
@@ -233,5 +247,7 @@
 <!--  -->
   </main>
 </body>
+
+  </div>
 
 </html>

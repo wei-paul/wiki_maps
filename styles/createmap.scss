@@ -9,7 +9,6 @@
   height: 90px;
 }
 
-
 //Container for holding interactive maps/buttons
 .container_box {
   display: flex;
@@ -19,7 +18,14 @@
   margin-top: 75px;
   margin-right: 100px;
   margin-left: 100px;
-  // border: solid;
+}
+
+#titleTable {
+  height: 50px;
+  width: 33%;
+  position: absolute;
+  z-index: 500;
+  display: none;
 }
 
 .block {
@@ -50,16 +56,15 @@
   top:0.1em;
 }
 
-
 //map
 
 .map_container {
   width: 100%;
+  z-index: 0;
 }
 
-
 #map2 {
-  height: 474px;
+  height: 473px;
   width: 100%;
 }
 
