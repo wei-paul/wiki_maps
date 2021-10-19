@@ -76,11 +76,10 @@
     type="text/javascript"
     src="/scripts/showcase_scrollbar.js">
   </script>
-  <script>
-    $(document).ready(function(){
-      scrollbar()
-    });
-  </script>
+  <script
+    type="text/javascript"
+    src="/scripts/createmap.js">
+</script>
 </head>
 
 
@@ -196,20 +195,47 @@
     <!-- CONTAINER for CONTAINING BUTTONS/INTERACTIVE MAPS -->
     <div class="container_box">
       <div id="createmapbuttons">
-          <section id="create_map">
-            <!-- <div id="map"></div> -->
-              <button type="button" class="block">Food</button>
-              <button type="button" class="block">Hikes</button>
-              <button type="button" class="block">Landmarks</button>
-              <button type="button" class="block">Schools</button>
-              <button type="button" class="block">Parks</button>
+        <section id="create_map">
+          <!-- <div id="map"></div> -->
+          <button class="block">Food</button>
+          <button class="block">Hikes</button>
+          <button class="block">Landmarks</button>
+          <button class="block">Schools</button>
+          <button class="block">Parks</button>
+        </section>
 
-          </section>
+      </div>
+      <div class="map_container">
+        <div id="map2">
+        <button id="pinIcon">
+        <i class="fa-solid fa-map-pin"></i>
+        </button>
+        <button id="deleteIcon">
+        <i class="fa-regular fa-trash-can"></i>
+        </button>
+        <button id="editIcon">
+        <i class="fa-regular fa-pen-to-square"></i>
+        </button>
+        <button id="saveIcon">
+          <i class="fa-regular fa-floppy-disk"></i>
+          </button>
+      <div id="titleTable">
+        <form
+          id="titleForm"
+          action="/"
+          method="POST">
+          <div>
+          <input
+            id="titleInput"
+            type="placeholder"
+            value="Title">
+          <input
+            type="submit"
+            value="save">
+          </div>
+        </form>
+      </div>
 
-        </div>
-    <div class="map_container">
-
-      <div id="map2">
 
     </div>
 
@@ -234,18 +260,7 @@
 <!--  -->
   </main>
 </body>
-<button class="test-button">add marker</button>
-  <div class="center hideform">
-    <button id="close" style="float: right;">X</button>
-    <form action="/action_page.php" id="tag-information">
-        Tag title:<br>
-        <input type="text" name="Tag title" id="Tag-title">
-        <br>
-        Image url link:<br>
-        <input type="text" name="Image url link" id="Image-url-link">
-        <br><br>
-        <input type="submit" value="Submit">
-    </form>
+
   </div>
 
 </html>
