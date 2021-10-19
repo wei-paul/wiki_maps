@@ -76,6 +76,10 @@
     type="text/javascript"
     src="/scripts/showcase_scrollbar.js">
   </script>
+  <script
+  type="text/javascript"
+  src="/scripts/createmap.js">
+</script>
   <script>
     $(document).ready(function(){
       scrollbar()
@@ -212,10 +216,10 @@
         <form
           action="/"
           method="POST">
-        <textarea
-          name="text"
-          placeholder="Title"
-          id="mapTitle"></textarea>
+          <div>
+          <input type="text" value="Title">
+          <input type="submit" value="save">
+          </div>
         </form>
       </div>
 
@@ -243,18 +247,7 @@
 <!--  -->
   </main>
 </body>
-<button class="test-button">add marker</button>
-  <div class="center hideform">
-    <button id="close" style="float: right;">X</button>
-    <form action="/action_page.php" id="tag-information">
-        Tag title:<br>
-        <input type="text" name="Tag title" id="Tag-title">
-        <br>
-        Image url link:<br>
-        <input type="text" name="Image url link" id="Image-url-link">
-        <br><br>
-        <input type="submit" value="Submit">
-    </form>
+
   </div>
 
 </html>

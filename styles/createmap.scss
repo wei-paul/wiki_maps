@@ -18,7 +18,14 @@
   margin-top: 75px;
   margin-right: 100px;
   margin-left: 100px;
-  // border: solid;
+}
+
+#titleTable {
+  height: 50px;
+  width: 33%;
+  position: absolute;
+  z-index: 500;
+  display: none;
 }
 
 .block {
@@ -53,6 +60,7 @@
 
 .map_container {
   width: 100%;
+  z-index: 0;
 }
 
 #map2 {
