@@ -24,6 +24,8 @@ app.use(cookieSession({
   keys: ['my secret key', 'yet another secret key']
 }));
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
 app.use(
   "/styles",
   sassMiddleware({
@@ -62,6 +64,10 @@ app.get('/login/:id', (req, res) => {
   res.redirect('/');
 });
 
+
+app.post("/", (req, res) => {
+  res.redirect("/");
+});
 
 app.get("/editMap", (req, res) => {
   const id = req.session['user_id'];

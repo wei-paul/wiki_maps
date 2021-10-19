@@ -23,5 +23,20 @@ module.exports = (db) => {
           .json({ error: err.message });
       });
   });
+
+  const addMap =  function(user) {
+    return pool.query(`
+      INSERT INTO maps (user_id, title, pins_id, category_name)
+      VALUES ($1, $2, $3, $4) RETURNING *;`,
+      [maps.user_id, maps.title, maps.pins_id, maps.category_name])
+        .then(res => res.rows[0])
+        .catch(err => err);
+    };
+
+  exports.addMap = addMap;
+
+
   return router;
 };
+
+

@@ -21,11 +21,22 @@
 }
 
 #titleTable {
-  height: 50px;
-  width: 33%;
+  height: 175px;
+  width: 100%;
+  margin-top: 100px;
+  margin-left: 75px;
+  margin-right: 75px;
   position: absolute;
   z-index: 500;
   display: none;
+  justify-content: center;
+  background: cornflowerblue;
+}
+
+#titleForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .block {
@@ -56,6 +67,56 @@
   top:0.1em;
 }
 
+#pinIcon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 557;
+  position: absolute;
+  margin-top: 80px;
+  margin-left: 12px;
+  width: 30px;
+  height: 20px;
+}
+
+#deleteIcon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 556;
+  position: absolute;
+  margin-top: 105px;
+  margin-left: 12px;
+  width: 30px;
+  height: 20px;
+  padding-top: 2px;
+}
+
+#editIcon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 555;
+  position: absolute;
+  margin-top: 130px;
+  margin-left: 12px;
+  width: 30px;
+  height: 20px;
+  padding-top: 2px;
+}
+
+#saveIcon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 555;
+  position: absolute;
+  margin-top: 155px;
+  margin-left: 12px;
+  width: 30px;
+  height: 20px;
+  padding-top: 2px;
+}
 //map
 
 .map_container {
@@ -66,6 +127,7 @@
 #map2 {
   height: 473px;
   width: 100%;
+  z-index: 0;
 }
 
 .center {
