@@ -49,13 +49,13 @@
 
 #scrollButtonLeft {
   margin-left: 100px;
-  // background: transparent;
+  background: transparent;
   border: 0;
 }
 
 #scrollButtonRight {
   margin-right: 100px;
-  // background: transparent;
+  background: transparent;
   border: 0;
 }
 
@@ -67,9 +67,21 @@
 }
 
 .fa-angle-left {
-  color:tomato !important;
+  color:rgba(53, 52, 52, 0.459);
+  font-size: x-large;
+}
+
+.fa-angle-left:hover {
+  color:rgba(242, 238, 238, 0.873);
+  font-size: x-large;
 }
 
 .fa-angle-right {
-  color:tomato !important;
+  color:rgba(53, 52, 52, 0.459);
+  font-size: x-large;
+}
+
+.fa-angle-right:hover {
+  color:rgba(242, 238, 238, 0.873);
+  font-size: x-large;
 }

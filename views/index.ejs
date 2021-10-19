@@ -22,8 +22,12 @@
   <link
       rel="preconnect"
       href="https://fonts.gstatic.com" crossorigin/>
-
-
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+    integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"/>
 
   <!-- App CSS -->
   <link
@@ -101,9 +105,10 @@
     </button>
     <div
       id="showcase">
+
       <div class="thumbnail">
           <form
-            action="/editMaps"
+            action="/editMap"
             method="POST">
           <button class="thumbnailButton">
             <div class="thumbnailTitle">title
@@ -116,7 +121,7 @@
 
         <div class="thumbnail">
           <form
-            action="editMaps"
+            action="/editMap"
             method="POST">
           <button class="thumbnailButton">
             <div class="thumbnailTitle">title
@@ -129,7 +134,7 @@
 
         <div class="thumbnail">
           <form
-            action="editMaps"
+            action="/editMap"
             method="POST">
             <button class="thumbnailButton">
               <div class="thumbnailTitle">title
@@ -142,7 +147,7 @@
 
         <div class="thumbnail">
           <form
-            action="editMaps"
+            action="/editMap"
             method="POST">
           <button class="thumbnailButton">
             <div class="thumbnailTitle">title
@@ -155,7 +160,7 @@
 
         <div class="thumbnail">
           <form
-            action="editMaps"
+            action="/editMap"
             method="POST">
           <button class="thumbnailButton">
             <div class="thumbnailTitle">title
@@ -168,7 +173,7 @@
 
         <div class="thumbnail">
           <form
-            action="editMaps"
+            action="/editMap"
             method="POST">
           <button class="thumbnailButton">
             <div class="thumbnailTitle">title
@@ -184,9 +189,9 @@
       id="scrollButtonRight">
       <i class="fa-solid fa-angle-right"></i>
     </button>
-      </section>
-    </div>
-  </div>
+  </section>
+</div>
+</div>
 
     <!-- CONTAINER for CONTAINING BUTTONS/INTERACTIVE MAPS -->
     <div class="container_box">
@@ -212,7 +217,21 @@
         id="footer">
       </section>
     </div>
-
+<!--  -->
+    <button class="test-button">add marker</button>
+  <div class="center hideform">
+    <button id="close" style="float: right;">X</button>
+    <form action="/action_page.php" id="tag-information">
+        Tag title:<br>
+        <input type="text" name="Tag title" id="Tag-title">
+        <br>
+        Image url link:<br>
+        <input type="text" name="Image url link" id="Image-url-link">
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+  </div>
+<!--  -->
   </main>
 </body>
 <button class="test-button">add marker</button>

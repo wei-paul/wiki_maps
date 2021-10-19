@@ -7,6 +7,7 @@ const sassMiddleware = require("./lib/sass-middleware");
 const express = require("express");
 const app = express();
 const morgan = require("morgan");
+const bodyParser = require("body-parser");
 
 // PG database client/connection setup
 const { Pool } = require("pg");
@@ -57,7 +58,7 @@ app.get("/editMap", (req, res) => {
   res.render("editMap");
 });
 
-app.post("/", (req, res) => {
+app.post("/editMap", (req, res) => {
   res.redirect("/editMap");
 });
 
