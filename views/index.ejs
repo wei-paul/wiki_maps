@@ -77,14 +77,9 @@
     src="/scripts/showcase_scrollbar.js">
   </script>
   <script
-  type="text/javascript"
-  src="/scripts/createmap.js">
+    type="text/javascript"
+    src="/scripts/createmap.js">
 </script>
-  <script>
-    $(document).ready(function(){
-      scrollbar()
-    });
-  </script>
 </head>
 
 
@@ -211,14 +206,32 @@
 
       </div>
       <div class="map_container">
-      <div id="map2">
+        <div id="map2">
+        <button id="pinIcon">
+        <i class="fa-solid fa-map-pin"></i>
+        </button>
+        <button id="deleteIcon">
+        <i class="fa-regular fa-trash-can"></i>
+        </button>
+        <button id="editIcon">
+        <i class="fa-regular fa-pen-to-square"></i>
+        </button>
+        <button id="saveIcon">
+          <i class="fa-regular fa-floppy-disk"></i>
+          </button>
       <div id="titleTable">
         <form
+          id="titleForm"
           action="/"
           method="POST">
           <div>
-          <input type="text" value="Title">
-          <input type="submit" value="save">
+          <input
+            id="titleInput"
+            type="placeholder"
+            value="Title">
+          <input
+            type="submit"
+            value="save">
           </div>
         </form>
       </div>

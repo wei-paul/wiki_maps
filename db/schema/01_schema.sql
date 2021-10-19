@@ -15,10 +15,7 @@ CREATE TABLE maps (
 
 CREATE TABLE pins (
   id SERIAL PRIMARY KEY NOT NULL,
-  user_id INTEGER REFERENCES users(id),
-  description VARCHAR(255),
-  image url VARCHAR(255),
-  coordinates VARCHAR(255)
+  json_name TEXT
 );
 
 
