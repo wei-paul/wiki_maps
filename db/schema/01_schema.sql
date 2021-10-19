@@ -7,7 +7,7 @@ CREATE TABLE users (
 
 CREATE TABLE pins (
   id SERIAL PRIMARY KEY NOT NULL,
-  json_name TEXT
+  json_name json
 );
 
 CREATE TABLE maps (

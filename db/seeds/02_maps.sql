@@ -1,5 +1,5 @@
 -- Widgets table seeds here (Example)
-INSERT INTO pins (id, json_name) VALUES (1, {
+INSERT INTO pins (id, json_name) VALUES (1, '{
     "type": "FeatureCollection",
     "features": [
       {
@@ -7,7 +7,7 @@ INSERT INTO pins (id, json_name) VALUES (1, {
         "properties": {
         "name": "Test name",
         "popupContent": "user1",
-        "popupimageURL": ""
+        "popupimageURL": "1"
         },
         "geometry": {
           "type": "Point",
@@ -19,7 +19,7 @@ INSERT INTO pins (id, json_name) VALUES (1, {
         "properties": {
         "name": "Test name",
         "popupContent": "user1",
-        "popupimageURL": ""
+        "popupimageURL": "2"
         },
         "geometry": {
           "type": "Point",
@@ -27,9 +27,9 @@ INSERT INTO pins (id, json_name) VALUES (1, {
         }
       }
     ]
-  };);
+  }');
 
-INSERT INTO pins (id, json_name) VALUES (2, {
+INSERT INTO pins (id, json_name) VALUES (2, '{
     "type": "FeatureCollection",
     "features": [
       {
@@ -37,7 +37,7 @@ INSERT INTO pins (id, json_name) VALUES (2, {
         "properties": {
         "name": "Test name",
         "popupContent": "user2",
-        "popupimageURL": ""
+        "popupimageURL": "123"
         },
         "geometry": {
           "type": "Point",
@@ -49,7 +49,7 @@ INSERT INTO pins (id, json_name) VALUES (2, {
         "properties": {
         "name": "Test name",
         "popupContent": "user2",
-        "popupimageURL": ""
+        "popupimageURL": "321"
         },
         "geometry": {
           "type": "Point",
@@ -57,9 +57,9 @@ INSERT INTO pins (id, json_name) VALUES (2, {
         }
       }
     ]
-  };);
+  }');
 
-INSERT INTO pins (id, json_name) VALUES (3, {
+INSERT INTO pins (id, json_name) VALUES (3, '{
     "type": "FeatureCollection",
     "features": [
       {
@@ -87,7 +87,7 @@ INSERT INTO pins (id, json_name) VALUES (3, {
         }
       }
     ]
-  };);
+  }');
 
 INSERT INTO maps (id, user_id, title, pins_id, category_name) VALUES (1, 1, 'BEST FOODS HERE', 1, 'Food');
 INSERT INTO maps (id, user_id, title, pins_id, category_name) VALUES (2, 1, 'REFRESHING HIKES', 2,'Hikes');
