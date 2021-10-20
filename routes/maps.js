@@ -4,11 +4,21 @@
  *   these routes are mounted onto /widgets
  * See: https://expressjs.com/en/guide/using-middleware.html#middleware.router
  */
-
+const { insertMaps } = require('../db/queries/map_queries.js')
 const express = require('express');
 const router  = express.Router();
 
 module.exports = (db) => {
+
+router.post("/", (req, res) => {
+  const mapTitle = req.body.title;
+  const categoryTitle = req.body.category_name;
+
+  db.insertMaps(req.body.title);
+});
+
+
+
   router.get("/", (req, res) => {
     let query = `SELECT * FROM maps`;
     console.log(query);

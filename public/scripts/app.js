@@ -80,4 +80,22 @@ $(document).ready(function() {
     }
   });
 
+
+
+  // ("#create_map").on("click", (event) => {
+
+  //   $.ajax({
+  //     type: "POST",
+  //     data: { category_name },
+  //     url: "/maps",
+  //   })
+  //   .done((res) => {
+  //     console.log(res);
+  //   })
+  //   .fail((err) => {
+  //     console.log("Error");
+
+  // })
+  // })
+
 });

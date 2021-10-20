@@ -11,7 +11,7 @@ const cookieParser = require("cookie-parser")
 // PG database client/connection setup
 const { Pool } = require("pg");
 const dbParams = require("./lib/db.js");
-const { insertPin } = require("./db/queries/map_queries.js")
+const { insertPin, insertMaps } = require("./db/queries/map_queries.js")
 const db = new Pool(dbParams);
 db.connect();
 
@@ -40,7 +40,7 @@ app.use(express.static("public"));
 const usersRoutes = require("./routes/users");
 const mapsRoutes = require("./routes/maps");
 
-// Mount all resource routes
+// Mosunt all resource route
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
 app.use("/api/maps", mapsRoutes(db));
@@ -78,6 +78,10 @@ app.post("/pins", (req, res) => {
   insertPin(req.body, req.cookies.user_id);
   // console.log("db is:", db);
 })
+
+app.post("/maps", (req, res) => {
+  insertMaps(req.body, req.cookies.user_id)
+});
 
 app.post("/editMap", (req, res) => {
   res.redirect("/editMap");
