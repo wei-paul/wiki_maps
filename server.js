@@ -11,6 +11,7 @@ const cookieParser = require("cookie-parser")
 // PG database client/connection setup
 const { Pool } = require("pg");
 const dbParams = require("./lib/db.js");
+const { insertPin } = require("./db/queries/map_queries.js")
 const db = new Pool(dbParams);
 db.connect();
 
@@ -50,14 +51,14 @@ app.use("/api/maps", mapsRoutes(db));
 // Separate them into separate routes files (see above).
 
 app.get("/", (req, res) => {
-  console.log("req.cookies :", req.cookies)
   res.render("index");
+  console.log("req.cookies.user_id:", req.cookies.user_id);
 });
 
 //login
 app.get('/login/:id', (req, res) => {
   res.cookie("user_id", req.params.id);
-  console.log("req.params is: ", req.params);
+  // console.log("req.params is: ", req.params);
 
   // send the user somewhere
   res.redirect('/');
@@ -69,12 +70,13 @@ app.post("/", (req, res) => {
 });
 
 app.get("/editMap", (req, res) => {
-  console.log(req.cookies);
+  // console.log(req.cookies);
   res.render("editMap");
 });
 
-app.post("/pin", (req, res) => {
-  console.log(req.cookies);
+app.post("/pins", (req, res) => {
+  insertPin(req.body, req.cookies.user_id);
+  // console.log("db is:", db);
 })
 
 app.post("/editMap", (req, res) => {
