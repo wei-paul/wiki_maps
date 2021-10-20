@@ -23,11 +23,21 @@ $("#titleForm").on("save", function (e) {
     }
 
     if (error === false) {
-      $.post("/api/maps", this.serialize())
-      .then(() => {
-        loadMaps();
+      $.ajax({
+        type: "POST",
+        data: "02_maps",
+        success: function (response) {
+            alert("Map has been saved!");
+        },
+        error: function () {
+            console.log("there is some error");
+        }
+        .then(() => {
+          res.redirect("/editMap")
+        })
+
       });
-      }
+    }
 
     const loadMaps = function() {
       $.ajax("http://localhost:8080/", {

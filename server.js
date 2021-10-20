@@ -7,7 +7,7 @@ const sassMiddleware = require("./lib/sass-middleware");
 const express = require("express");
 const app = express();
 const morgan = require("morgan");
-const cookieSession = require('cookie-session');
+const cookieParser = require("cookie-parser")
 // PG database client/connection setup
 const { Pool } = require("pg");
 const dbParams = require("./lib/db.js");
@@ -19,10 +19,7 @@ db.connect();
 //         The :status token will be colored red for server error codes, yellow for client error codes, cyan for redirection codes, and uncolored for all other codes.
 app.use(morgan("dev"));
 app.set("view engine", "ejs");
-app.use(cookieSession({
-  name: 'encryptedcookie',
-  keys: ['my secret key', 'yet another secret key']
-}));
+app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -53,13 +50,15 @@ app.use("/api/maps", mapsRoutes(db));
 // Separate them into separate routes files (see above).
 
 app.get("/", (req, res) => {
+  console.log("req.cookies :", req.cookies)
   res.render("index");
 });
 
 //login
 app.get('/login/:id', (req, res) => {
-  req.session.user_id = req.params.id;
+  res.cookie("user_id", req.params.id);
   console.log("req.params is: ", req.params);
+
   // send the user somewhere
   res.redirect('/');
 });
@@ -70,9 +69,13 @@ app.post("/", (req, res) => {
 });
 
 app.get("/editMap", (req, res) => {
-  const id = req.session['user_id'];
+  console.log(req.cookies);
   res.render("editMap");
 });
+
+app.post("/pin", (req, res) => {
+  console.log(req.cookies);
+})
 
 app.post("/editMap", (req, res) => {
   res.redirect("/editMap");

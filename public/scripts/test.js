@@ -41,6 +41,7 @@ $(document).ready(function() {
     ]
   };
 
+
   geojsonLayer = L.geoJson(geojson, {
     pointToLayer: function(feature, latlng) {
         return new L.Marker(latlng, {
