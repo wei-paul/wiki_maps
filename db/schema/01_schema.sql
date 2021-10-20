@@ -12,7 +12,7 @@ CREATE TABLE pins (
   image_url VARCHAR(255),
   description VARCHAR(255),
   lat INTEGER,
-  long INTEGER,
+  long INTEGER
 );
 
 CREATE TABLE maps (
