@@ -6,7 +6,7 @@ let template_JSON = {
       "properties": {
       "name": "Test name",
       "popupContent": "Test description",
-      "popupimageURL": ""
+      "popupimageURL": "123"
       },
       "geometry": {
         "type": "Point",
@@ -18,7 +18,7 @@ let template_JSON = {
       "properties": {
       "name": "Test name",
       "popupContent": "Test2",
-      "popupimageURL": ""
+      "popupimageURL": "123"
       },
       "geometry": {
         "type": "Point",
