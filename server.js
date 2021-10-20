@@ -75,7 +75,11 @@ app.get("/editMap", (req, res) => {
 
 app.post("/pin", (req, res) => {
   console.log(req.cookies);
-})
+});
+
+app.post("/maps", (req, res) => {
+  console.log(req.cookies);
+});
 
 app.post("/editMap", (req, res) => {
   res.redirect("/editMap");
