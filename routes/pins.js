@@ -9,7 +9,7 @@ const express = require('express');
 const router  = express.Router();
 
 module.exports = (db) => {
-  router.get("/api/pins", (req, res) => {
+  router.post("/", (req, res) => {
     let query = `SELECT * FROM pins`;
     console.log(query);
     db.query(query)
