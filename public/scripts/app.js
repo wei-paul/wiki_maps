@@ -1,6 +1,7 @@
+// const { insertPin } = require("../../db/queries/map_queries");
+// const express = require("express");
+// const cookieSession = require('cookie-session');
 
-
-// Client facing scripts here
 let map2, markerLocation;
 
 $(document).ready(function() {
@@ -22,32 +23,20 @@ $(document).ready(function() {
   function addMarker(temp) {
     if (markerMode) {
       markerMode = false;
-      let markerInfo = {
 
-        "type": "Feature",
-        "properties": {
-        "user_id": "Test name",
-        "popupContent": "Test2",
-        "popupimageURL": ""
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [-122.3045, 49.0504]
-        }
-      }
-
-      let newMarker = new L.marker(temp.latlng)
+      let newMarker = new L.marker(temp.latlng);
 
       let long = temp.latlng.lng
       let lat = temp.latlng.lat
+      let user_id = req.session['user_id'];
 
-      // let tagTitle = prompt("Please enter the title of your marker");
       $('.center').show();
       $(this).hide();
 
       $('#close').on('click', function () {
         $('.center').hide();
       })
+
 
       $("#tag-information").unbind('submit')
       $("#tag-information").submit(function(event) {
@@ -56,8 +45,10 @@ $(document).ready(function() {
         $('.center').hide();
 
         let description = $(this).find("#Tag-title").val()
-        let imageUrl = $(this).find("#Image-url-link").val()
+        let image_url = $(this).find("#Image-url-link").val()
         markerButton= true;
+
+        // insertPin(description, image_url, lat, long, map_id, $req.cookies.user_id)
       })
 
       $("#map2").css("cursor", "")
