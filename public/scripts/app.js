@@ -1,6 +1,7 @@
+// const { insertPin } = require("../../db/queries/map_queries");
+// const express = require("express");
+// const cookieSession = require('cookie-session');
 
-
-// Client facing scripts here
 let map2, markerLocation;
 
 $(document).ready(function() {
@@ -20,28 +21,16 @@ $(document).ready(function() {
 
   vancouver.on('click', addMarker);
   function addMarker(temp) {
+    console.log("addMarker is", temp)
     if (markerMode) {
       markerMode = false;
-      let markerInfo = {
 
-        "type": "Feature",
-        "properties": {
-        "user_id": "Test name",
-        "popupContent": "Test2",
-        "popupimageURL": ""
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [-122.3045, 49.0504]
-        }
-      }
-
-      let newMarker = new L.marker(temp.latlng)
+      let newMarker = new L.marker(temp.latlng);
 
       let long = temp.latlng.lng
       let lat = temp.latlng.lat
 
-      // let tagTitle = prompt("Please enter the title of your marker");
+
       $('.center').show();
       $(this).hide();
 
@@ -49,15 +38,33 @@ $(document).ready(function() {
         $('.center').hide();
       })
 
-      $("#tag-information").unbind('submit')
+
+      // $("#tag-information").unbind('submit')
+
       $("#tag-information").submit(function(event) {
+        console.log("testing is: ")
         event.preventDefault();
         newMarker.bindPopup(`<b>${$(this).find("#Tag-title").val()}</b><img width="150" height="150" src="${$(this).find("#Image-url-link").val()}">`);
         $('.center').hide();
 
         let description = $(this).find("#Tag-title").val()
-        let imageUrl = $(this).find("#Image-url-link").val()
+        let image_url = $(this).find("#Image-url-link").val()
         markerButton= true;
+        let map_id = 1;
+        // insertPin(description, image_url, lat, long, map_id, user_id) (can't query database on front end)
+
+        $.ajax({
+          type: "POST",
+          data: { description, image_url, lat, long, map_id },
+          url: "/pin",
+        })
+        .done((res) => {
+          console.log(res);
+        })
+        .fail((err) => {
+          console.log("Error");
+        })
+
       })
 
       $("#map2").css("cursor", "")

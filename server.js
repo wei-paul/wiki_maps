@@ -50,6 +50,7 @@ app.use("/api/maps", mapsRoutes(db));
 // Separate them into separate routes files (see above).
 
 app.get("/", (req, res) => {
+  console.log("req.cookies :", req.cookies)
   res.render("index");
 });
 
@@ -71,6 +72,10 @@ app.get("/editMap", (req, res) => {
   console.log(req.cookies);
   res.render("editMap");
 });
+
+app.post("/pin", (req, res) => {
+  console.log(req.cookies);
+})
 
 app.post("/editMap", (req, res) => {
 
