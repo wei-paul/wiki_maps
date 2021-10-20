@@ -71,14 +71,13 @@ app.post("/", (req, res) => {
 
 app.get("/editMap", (req, res) => {
   const id = req.session['user_id'];
-  console.log(req.session);
   res.render("editMap");
 });
 
 app.post("/editMap", (req, res) => {
-
   res.redirect("/editMap");
 });
+
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });

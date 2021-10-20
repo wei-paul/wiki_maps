@@ -6,11 +6,11 @@ const onChange = function () {
   return $("#titleTable").show()
 };
 
-
 //Generate Random id (number)
 const generateRandomNumber = function() {
   return Math.floor((Math.random() * 999999) + 100000)
 };
+
 $("#titleForm").on("save", function (e) {
   e.preventDefault();
   let error = false;

@@ -66,9 +66,10 @@ $(document).ready(function() {
     }
   }
 
-  $(".test-button").on("click", () => {
+  $("#pinIcon").on("click", () => {
     $("#map2").css("cursor", "url(https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png) 12 43, move")
     markerButton = true;
+
   });
 
 });
