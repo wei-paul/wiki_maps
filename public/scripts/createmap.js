@@ -1,7 +1,10 @@
 $(document).ready(function() {
   $('#saveIcon').on('click', onChange)
-});
 
+
+
+
+});
 const onChange = function () {
   return $("#titleTable").show()
 };
@@ -76,3 +79,4 @@ $("#titleForm").on("save", function (e) {
     }
 
 });
+
