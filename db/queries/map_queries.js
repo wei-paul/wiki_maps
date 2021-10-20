@@ -18,12 +18,12 @@ const insertPin = function(pin, userID) {
 }
 exports.insertPin = insertPin
 
-const insertMaps = function(maps) {
+const insertMaps = function(maps, userId) {
   return db
   .query(`
   INSERT INTO maps (user_id, title, category_name)
   VALUES ($1, $2, $3)
-  RETURNING *;`, [maps.user_id, maps.title, maps.category_name])
+  RETURNING *;`, [userId, maps.title, maps.category_name])
   .then((result) => {
     return result.rows[0];
   })
