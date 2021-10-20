@@ -78,7 +78,7 @@ app.post("/pin", (req, res) => {
 });
 
 app.post("/maps", (req, res) => {
-  console.log(req.cookies);
+  console.log("req.cookies");
 });
 
 app.post("/editMap", (req, res) => {
