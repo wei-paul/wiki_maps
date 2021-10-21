@@ -29,15 +29,6 @@ $(document).ready(function() {
       $('#center_hideform').show();
       $(this).hide();
 
-      // $('#close').on('click', function () {
-      //   $('#center_hideform').hide();
-      // });
-
-
-      // $("#tag-information").unbind('submit')
-
-
-
       $("#map2").css("cursor", "")
       newMarker.addTo(vancouver);
     }

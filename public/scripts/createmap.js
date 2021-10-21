@@ -10,6 +10,10 @@ $(document).ready(function() {
     $("#titleTable").show()
   });
 
+  // $('#deleteIcon').on('click', function() => {
+
+  // })
+
 //Generate Random id (number)
 const generateRandomNumber = function() {
   return Math.floor((Math.random() * 999999) + 100000)
