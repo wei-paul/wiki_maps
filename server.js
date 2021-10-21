@@ -60,8 +60,7 @@ app.get("/", (req, res) => {
 //login
 app.get('/login/:id', (req, res) => {
   res.cookie("user_id", req.params.id);
-  // console.log("req.params is: ", req.params);
-   // send the user somewhere
+
   res.redirect('/');
 });
 
