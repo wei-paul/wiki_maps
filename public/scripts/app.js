@@ -68,6 +68,10 @@ $(document).ready(function() {
     }
   });
 
+  $('#deleteIcon').on('click', (event) => {
+    event
+  })
+
   $("#titleInput").on("click", (event) => {
     event.stopPropagation();
 
