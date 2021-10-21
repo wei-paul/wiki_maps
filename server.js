@@ -93,6 +93,8 @@ app.post("/maps", (req, res) => {
 });
 
 app.post("/editMap", (req, res) => {
+
+
   res.redirect("/editMap");
 });
 
