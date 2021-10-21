@@ -4,14 +4,14 @@ $(document).ready(function() {
   $('#scrollButtonRight').click(function(event) {
     event.preventDefault();
     $('#showcase').animate({
-      scrollLeft: "+=317ev"
-    }, "fast");
+      scrollLeft: "+=550px"
+    }, "medium");
   });
   $('#scrollButtonLeft').click(function(event) {
     event.preventDefault();
     $('#showcase').animate({
-      scrollLeft: "-=317ev"
-    }, "fast");
+      scrollLeft: "-=550px"
+    }, "medium");
   });
 
   $.ajax("/api/maps", {
