@@ -48,7 +48,7 @@ $(document).ready(function() {
           });
       },
       onEachFeature: function (feature, layer) {
-          layer.bindPopup(`<b>${feature.properties.popupContent}</b><img width="120" height="120" src="${feature.properties.popupimageURL}">`);
+          layer.bindPopup(`<div style="display: flex; align-items: center; flex-direction: column"><img width="120" height="120" src="${feature.properties.popupimageURL}"><b>${feature.properties.popupContent}</b></div>`);
       }
     });vancouver.addLayer(geojsonLayer);
   })

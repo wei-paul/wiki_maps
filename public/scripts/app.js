@@ -46,7 +46,7 @@ $(document).ready(function() {
     console.log("testing is: ")
     event.preventDefault();
     window.newMarker.bindPopup(`<b>${$(this).find("#Tag-title").val()}</b><img width="150" height="150" src="${$(this).find("#Image-url-link").val()}">`);
-    $('.center').hide();
+    $('#center_hideform').hide();
 
     let description = $(this).find("#Tag-title").val()
     let image_url = $(this).find("#Image-url-link").val()
