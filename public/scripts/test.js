@@ -40,7 +40,7 @@ $(document).ready(function() {
         "properties": {
         "name": "Test name",
         "popupContent": "Test description",
-        "popupimageURL": ""
+        "popupimageURL": "test"
         },
         "geometry": {
           "type": "Point",
@@ -48,7 +48,7 @@ $(document).ready(function() {
         }
       }
       template.properties.popupContent = element.description
-      template.properties.popupimageURL = element.popupimageURL
+      template.properties.popupimageURL = element.image_url
       template.geometry.coordinates = [Number(element.long), Number(element.lat)]
       console.log(template)
       geojson.features.push(template)
@@ -60,39 +60,14 @@ $(document).ready(function() {
           });
       },
       onEachFeature: function (feature, layer) {
-          layer.bindPopup(feature.properties.popupContent);
+          layer.bindPopup(`<b>${feature.properties.popupContent}</b><img width="120" height="120" src="${feature.properties.popupimageURL}">`);
       }
     });vancouver.addLayer(geojsonLayer);
   })
 
   let geojson = {
     "type": "FeatureCollection",
-    "features": [
-      {
-        "type": "Feature",
-        "properties": {
-        "name": "Test name",
-        "popupContent": "Test description",
-        "popupimageURL": ""
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [-123.1207, 49.2827]
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-        "name": "Test name",
-        "popupContent": "Test2",
-        "popupimageURL": ""
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [-122.3045, 49.0504]
-        }
-      }
-    ]
+    "features": []
   };
 
 
