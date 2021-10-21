@@ -10,15 +10,6 @@ const router  = express.Router();
 
 module.exports = (db) => {
 
-router.post("/", (req, res) => {
-  const mapTitle = req.body.title;
-  const categoryTitle = req.body.category_name;
-
-  db.insertMaps(req.body.title);
-});
-
-
-
   router.get("/", (req, res) => {
     let query = `SELECT * FROM maps`;
     console.log(query);
@@ -34,16 +25,18 @@ router.post("/", (req, res) => {
       });
   });
 
-  const addMap =  function(user) {
+  const getMapId =  function(user) {
     return pool.query(`
-      INSERT INTO maps (user_id, title, pins_id, category_name)
-      VALUES ($1, $2, $3, $4) RETURNING *;`,
-      [maps.user_id, maps.title, maps.pins_id, maps.category_name])
+      SELECT id
+      FROM maps
+      ORDER BY id DESC
+      LIMIT 1
+      `)
         .then(res => res.rows[0])
         .catch(err => err);
     };
 
-  exports.addMap = addMap;
+  exports.getMapId = getMapId;
 
 
   return router;
