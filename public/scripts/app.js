@@ -1,4 +1,3 @@
-// const { insertPin } = require("../../db/queries/map_queries");
 
 let map2, markerLocation;
 
@@ -78,5 +77,7 @@ $(document).ready(function() {
       markerMode = true;
     }
   });
+
+
 
 });
