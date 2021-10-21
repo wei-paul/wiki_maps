@@ -22,53 +22,42 @@ $(document).ready(function() {
   })
   .done((res) => {
     console.log(res)
-  })
-
-  for (element in res) {
-
-  }
-
-  let geojson = {
-    "type": "FeatureCollection",
-    "features": [
-      {
+    for (const element of res) {
+      let template = {
         "type": "Feature",
         "properties": {
         "name": "Test name",
         "popupContent": "Test description",
-        "popupimageURL": ""
+        "popupimageURL": "test"
         },
         "geometry": {
           "type": "Point",
           "coordinates": [-123.1207, 49.2827]
         }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-        "name": "Test name",
-        "popupContent": "Test2",
-        "popupimageURL": ""
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [-122.3045, 49.0504]
-        }
       }
-    ]
+      template.properties.popupContent = element.description
+      template.properties.popupimageURL = element.image_url
+      template.geometry.coordinates = [Number(element.long), Number(element.lat)]
+      console.log(template)
+      geojson.features.push(template)
+      console.log(geojson)
+    }
+    geojsonLayer = L.geoJson(geojson, {
+      pointToLayer: function(feature, latlng) {
+          return new L.Marker(latlng, {
+          });
+      },
+      onEachFeature: function (feature, layer) {
+          layer.bindPopup(`<b>${feature.properties.popupContent}</b><img width="120" height="120" src="${feature.properties.popupimageURL}">`);
+      }
+    });vancouver.addLayer(geojsonLayer);
+  })
+
+  let geojson = {
+    "type": "FeatureCollection",
+    "features": []
   };
 
-
-
-  geojsonLayer = L.geoJson(geojson, {
-    pointToLayer: function(feature, latlng) {
-        return new L.Marker(latlng, {
-        });
-    },
-    onEachFeature: function (feature, layer) {
-        layer.bindPopup(feature.properties.popupContent);
-    }
-  });vancouver.addLayer(geojsonLayer);
 });
 
 
