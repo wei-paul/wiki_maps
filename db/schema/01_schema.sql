@@ -9,7 +9,8 @@ CREATE TABLE maps (
   id SERIAL PRIMARY KEY NOT NULL,
   user_id INTEGER REFERENCES users(id),
   title VARCHAR(255) NOT NULL,
-  category_name VARCHAR(255)
+  category_name VARCHAR(255),
+  image_url TEXT
 );
 
 CREATE TABLE pins (

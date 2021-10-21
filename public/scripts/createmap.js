@@ -10,15 +10,20 @@ $(document).ready(function() {
     $("#titleTable").show()
   });
 
+
+
   $("#titleForm").submit("save", function (e) {
     $("#titleTable").toggle();
     e.preventDefault();
-
+    const image = $("#coverImageInput").val();
     const title = $("#titleInput").val();
     const data = {
       title,
-      category_name: category
+      category_name: category,
+      image_url: image
     }
+    console.log("data is:", data)
+
 
     $.ajax({
       type: "POST",
