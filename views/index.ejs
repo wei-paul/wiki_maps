@@ -145,15 +145,15 @@
 
         <div id="center_hideform">
           <form action="/action_page.php" id="tag-information">
-              Tag title:<br>
-              <input
-                type="text"
-                name="Tag title" id="Tag-title">
               <br>
-              Image url link:<br>
               <input
                 type="text"
-                name="Image url link" id="Image-url-link">
+                placeholder="Tag title" id="Tag-title">
+              <br>
+              <br>
+              <input
+                type="text"
+                placeholder="Image url link" id="Image-url-link">
               <br><br>
               <input
                 type="submit"  value="Submit">
@@ -168,17 +168,18 @@
           <div>
           <input
             id="titleInput"
-            type="placeholder"
-            value="Title">
+            type="text"
+            placeholder="Title">
             <br>
           <input
             id="coverImageInput"
-            type="placeholder"
-            value="Cover Photo URL">
+            type="text"
+            placeholder="Cover Photo URL">
             <br>
           <input
             type="submit"
-            value="save">
+            value="save"
+            id="saveButton">
           </div>
         </form>
       </div>

@@ -39,6 +39,28 @@
   justify-content: center;
   align-items: center;
   margin-top: 20px;
+  margin-left: 20px;
+  width: 200px;
+}
+
+#titleInput {
+  display: flex;
+  margin-top: 10px;
+  margin-left: 30px;
+  margin-bottom: 20px;
+  width: 200px;
+}
+
+#coverImageInput {
+  display: flex;
+  margin-bottom: 20px;
+  margin-left: 30px;
+  width: 200px;
+}
+
+#saveButton {
+  width: 200px;
+  margin-left: 30px;
 }
 
 .block {

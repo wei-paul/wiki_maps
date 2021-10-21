@@ -70,6 +70,9 @@ $(document).ready(function() {
     }
   });
 
+  $("#titleInput").on("click", (event) => {
+    event.stopPropagation();
 
+  })
 
 });
