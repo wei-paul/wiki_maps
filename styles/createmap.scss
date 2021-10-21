@@ -141,3 +141,14 @@
 .hideform {
   display: none;
 }
+
+#center_hideform {
+  position: absolute;
+  z-index: 600;
+  display: none;
+  width: auto;
+  margin-left: 200px;
+  background: rgb(153, 217, 220);
+  margin-top: 100px;
+  border: solid;
+}

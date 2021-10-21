@@ -27,22 +27,14 @@ $(document).ready(function() {
       let long = temp.latlng.lng
       let lat = temp.latlng.lat
 
-
-      $('.center').show();
+      $('#center_hideform').show();
       $(this).hide();
-
-      $('#close').on('click', function () {
-        $('.center').hide();
-      })
-
-
-      // $("#tag-information").unbind('submit')
 
       $("#tag-information").submit(function(event) {
         console.log("testing is: ")
         event.preventDefault();
         newMarker.bindPopup(`<b>${$(this).find("#Tag-title").val()}</b><img width="150" height="150" src="${$(this).find("#Image-url-link").val()}">`);
-        $('.center').hide();
+        $('#center_hideform').hide();
 
         let description = $(this).find("#Tag-title").val()
         let image_url = $(this).find("#Image-url-link").val()
