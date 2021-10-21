@@ -11,7 +11,7 @@ const cookieParser = require("cookie-parser")
 // PG database client/connection setup
 const { Pool } = require("pg");
 const dbParams = require("./lib/db.js");
-const { insertPin, insertMaps } = require("./db/queries/map_queries.js")
+const { insertPin, insertMaps, getMapPins } = require("./db/queries/map_queries.js")
 const db = new Pool(dbParams);
 db.connect();
 
@@ -71,8 +71,8 @@ app.post("/", (req, res) => {
 });
 
 app.get("/editMap", (req, res) => {
-  // console.log(req.cookies);
-  res.render("/editMap");
+  console.log(req.query.map_id);
+  res.render("editMap");
 });
 
 app.post("/pins", (req, res) => {
@@ -90,9 +90,16 @@ app.post("/maps", (req, res) => {
   });
 });
 
-app.post("/editMap", (req, res) => {
-  res.redirect("/editMap");
-});
+app.get('/api/maps/:map_id', (req, res) => {
+  getMapPins(req.params.map_id)
+  .then((result) => {
+    res.json(result);
+  })
+  .catch((err) => {
+
+  });
+})
+
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
