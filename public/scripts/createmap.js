@@ -10,24 +10,19 @@ $(document).ready(function() {
     $("#titleTable").show()
   });
 
-  // $('#deleteIcon').on('click', function() => {
-
-  // })
-
-//Generate Random id (number)
-const generateRandomNumber = function() {
-  return Math.floor((Math.random() * 999999) + 100000)
-  };
 
   $("#titleForm").submit("save", function (e) {
     $("#titleTable").toggle();
     e.preventDefault();
-
+    const image = $("#coverImageInput").val();
     const title = $("#titleInput").val();
     const data = {
       title,
-      category_name: category
+      category_name: category,
+      image_url: image
     }
+    console.log("data is:", data)
+
 
     $.ajax({
       type: "POST",

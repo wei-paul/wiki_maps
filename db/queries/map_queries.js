@@ -16,14 +16,15 @@ const insertPin = function(pin, userID) {
     return null;
   })
 }
+
 exports.insertPin = insertPin
 
 const insertMaps = function(maps, userId) {
   return db
   .query(`
-  INSERT INTO maps (user_id, title, category_name)
-  VALUES ($1, $2, $3)
-  RETURNING *;`, [userId, maps.title, maps.category_name])
+  INSERT INTO maps (user_id, title, category_name, image_url)
+  VALUES ($1, $2, $3, $4)
+  RETURNING *;`, [userId, maps.title, maps.category_name, maps.image_url])
   .then((result) => {
     return result.rows[0];
   })
