@@ -16,6 +16,7 @@ const insertPin = function(pin, userID) {
     return null;
   })
 }
+
 exports.insertPin = insertPin
 
 const insertMaps = function(maps, userId) {

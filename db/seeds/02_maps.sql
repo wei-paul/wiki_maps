@@ -1,7 +1,7 @@
 -- Widgets table seeds here (Example)
 INSERT INTO maps (user_id, title, category_name) VALUES (1, 'BEST FOODS HERE', 'Food');
-INSERT INTO maps (user_id, title, category_name) VALUES (1, 'REFRESHING HIKES', 'Hikes');
-INSERT INTO maps (user_id, title, category_name) VALUES (1, 'COOL BUILDINGS', 'Landmarks');
+INSERT INTO maps (user_id, title, category_name) VALUES (2, 'REFRESHING HIKES', 'Hikes');
+INSERT INTO maps (user_id, title, category_name) VALUES (3, 'COOL BUILDINGS', 'Landmarks');
 
 INSERT INTO pins (map_id, user_id, image_url, description, lat, long) VALUES (1, 1, 'https://www.ctvnews.ca/polopoly_fs/1.5103049.1600026335!/httpImage/image.jpg_gen/derivatives/landscape_1020/image.jpg', 'McDonalds', 49.2899, -123.1300);
 INSERT INTO pins (map_id, user_id, image_url, description, lat, long) VALUES (2, 2, 'https://www.qsrmagazine.com/sites/default/files/styles/story_page/public/2021-01/BurgerKing.jpg?itok=TDtHHm4c', 'Buger king', 49.1212, -123.0001);

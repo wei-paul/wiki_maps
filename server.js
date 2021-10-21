@@ -61,8 +61,7 @@ app.get("/", (req, res) => {
 app.get('/login/:id', (req, res) => {
   res.cookie("user_id", req.params.id);
   // console.log("req.params is: ", req.params);
-  insert
-  // send the user somewhere
+   // send the user somewhere
   res.redirect('/');
 });
 
@@ -109,7 +108,5 @@ app.listen(PORT, () => {
 
 
 
-//Can't set cookie right now because I don't have a user to tie that cookie to
-//Because i want to set the cookie to the user id, but i dont' have the user id
-//In which case I could set that cookie to the database user, BUT that database user has alot of user
-//THEN i would have to make query to get that specific user that I want to link the cookie to
+
+//https://media-cdn.tripadvisor.com/media/photo-s/09/f0/52/b1/burger-king.jpg
