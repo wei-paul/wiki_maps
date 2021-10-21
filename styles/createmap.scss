@@ -27,7 +27,7 @@
   display: none;
   justify-content: center;
   width: 33.33%;
-  height: 210px;
+  height: 250px;
   margin-left: 275px;
   background: rgb(153, 217, 220);
   margin-top: 100px;
@@ -36,31 +36,33 @@
 
 #titleForm {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-  margin-left: 20px;
-  width: 200px;
+  flex-direction: column;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 10px;
 }
 
 #titleInput {
   display: flex;
-  margin-top: 10px;
-  margin-left: 30px;
-  margin-bottom: 20px;
-  width: 200px;
+  margin-bottom: 16.5px;
+  // margin-top: 10px;
+  // margin-left: 30px;
+  // margin-bottom: 20px;
+  width: 217px;
 }
 
 #coverImageInput {
   display: flex;
+  width: 217px;
   margin-bottom: 20px;
-  margin-left: 30px;
-  width: 200px;
+  // margin-left: 30px;
+  // width: 200px;
 }
 
 #saveButton {
-  width: 200px;
-  margin-left: 30px;
+  display: flex;
+  width: 217px;
+  justify-content: center;
 }
 
 .block {
@@ -170,7 +172,7 @@
   z-index: 600;
   display: none;
   width: 33.33%;
-  height: 210px;
+  height: 250px;
   margin-left: 275px;
   background: rgb(153, 217, 220);
   margin-top: 100px;
