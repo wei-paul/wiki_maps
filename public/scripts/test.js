@@ -16,17 +16,54 @@ $(document).ready(function() {
   const map_id = urlParams.get('map_id');
   console.log({map_id});
 
+  // let template = {
+  //   "type": "Feature",
+  //   "properties": {
+  //   "name": "Test name",
+  //   "popupContent": "Test description",
+  //   "popupimageURL": ""
+  //   },
+  //   "geometry": {
+  //     "type": "Point",
+  //     "coordinates": [-123.1207, 49.2827]
+  //   }
+  // }
   $.ajax({
     type: "GET",
     url: `/api/maps/${map_id}`,
   })
   .done((res) => {
     console.log(res)
+    for (const element of res) {
+      let template = {
+        "type": "Feature",
+        "properties": {
+        "name": "Test name",
+        "popupContent": "Test description",
+        "popupimageURL": ""
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-123.1207, 49.2827]
+        }
+      }
+      template.properties.popupContent = element.description
+      template.properties.popupimageURL = element.popupimageURL
+      template.geometry.coordinates = [Number(element.long), Number(element.lat)]
+      console.log(template)
+      geojson.features.push(template)
+      console.log(geojson)
+    }
+    geojsonLayer = L.geoJson(geojson, {
+      pointToLayer: function(feature, latlng) {
+          return new L.Marker(latlng, {
+          });
+      },
+      onEachFeature: function (feature, layer) {
+          layer.bindPopup(feature.properties.popupContent);
+      }
+    });vancouver.addLayer(geojsonLayer);
   })
-
-  for (element in res) {
-
-  }
 
   let geojson = {
     "type": "FeatureCollection",
@@ -60,15 +97,15 @@ $(document).ready(function() {
 
 
 
-  geojsonLayer = L.geoJson(geojson, {
-    pointToLayer: function(feature, latlng) {
-        return new L.Marker(latlng, {
-        });
-    },
-    onEachFeature: function (feature, layer) {
-        layer.bindPopup(feature.properties.popupContent);
-    }
-  });vancouver.addLayer(geojsonLayer);
+  // geojsonLayer = L.geoJson(geojson, {
+  //   pointToLayer: function(feature, latlng) {
+  //       return new L.Marker(latlng, {
+  //       });
+  //   },
+  //   onEachFeature: function (feature, layer) {
+  //       layer.bindPopup(feature.properties.popupContent);
+  //   }
+  // });vancouver.addLayer(geojsonLayer);
 });
 
 

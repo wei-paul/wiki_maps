@@ -18,14 +18,13 @@ $(document).ready(function() {
 
   vancouver.on('click', addMarker);
   function addMarker(temp) {
-    console.log("addMarker is", temp)
     if (markerMode) {
       markerMode = false;
 
       let newMarker = new L.marker(temp.latlng);
-
-      let long = temp.latlng.lng
-      let lat = temp.latlng.lat
+      window.newMarker = newMarker
+      window.long = temp.latlng.lng
+      window.lat = temp.latlng.lat
 
 
       $('.center').show();
@@ -38,36 +37,37 @@ $(document).ready(function() {
 
       // $("#tag-information").unbind('submit')
 
-      $("#tag-information").submit(function(event) {
-        console.log("testing is: ")
-        event.preventDefault();
-        newMarker.bindPopup(`<b>${$(this).find("#Tag-title").val()}</b><img width="150" height="150" src="${$(this).find("#Image-url-link").val()}">`);
-        $('.center').hide();
 
-        let description = $(this).find("#Tag-title").val()
-        let image_url = $(this).find("#Image-url-link").val()
-        markerButton= true;
-        let map_id = $('#map2').attr('mapid');
-        console.log("mapID:", map_id);
-
-        $.ajax({
-          type: "POST",
-          data: { description, image_url, lat, long, map_id },
-          url: "/pins",
-        })
-        .done((res) => {
-          console.log(res);
-        })
-        .fail((err) => {
-          console.log("Error");
-        })
-
-      })
 
       $("#map2").css("cursor", "")
       newMarker.addTo(vancouver);
     }
   }
+  $("#tag-information").submit(function(event) {
+    console.log("testing is: ")
+    event.preventDefault();
+    window.newMarker.bindPopup(`<b>${$(this).find("#Tag-title").val()}</b><img width="150" height="150" src="${$(this).find("#Image-url-link").val()}">`);
+    $('.center').hide();
+
+    let description = $(this).find("#Tag-title").val()
+    let image_url = $(this).find("#Image-url-link").val()
+    markerButton= true;
+    let map_id = $('#map2').attr('mapid');
+    console.log("mapID:", map_id);
+
+    $.ajax({
+      type: "POST",
+      data: { description, image_url, lat: window.lat, long: window.long, map_id },
+      url: "/pins",
+    })
+    .done((res) => {
+      console.log(res);
+    })
+    .fail((err) => {
+      console.log("Error");
+    })
+
+  })
 
   $("#pinIcon").on("click", (event) => {
     event.stopPropagation();
@@ -77,7 +77,4 @@ $(document).ready(function() {
       markerMode = true;
     }
   });
-
-
-
 });
