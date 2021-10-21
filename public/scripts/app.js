@@ -47,8 +47,9 @@ $(document).ready(function() {
         let description = $(this).find("#Tag-title").val()
         let image_url = $(this).find("#Image-url-link").val()
         markerButton= true;
-        let map_id = 1; //HARD CODING MAP_ID because MAP_ID is undefined right now
-        // insertPin(description, image_url, lat, long, map_id, user_id) (can't query database on front end)
+        let map_id = $('#map2').attr('mapid');
+        console.log("mapID:", map_id);
+
         $.ajax({
           type: "POST",
           data: { description, image_url, lat, long, map_id },

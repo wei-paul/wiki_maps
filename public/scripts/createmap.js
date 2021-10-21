@@ -1,4 +1,7 @@
 $(document).ready(function() {
+  document.getElementById('map2').style.pointerEvents = 'none';
+  document.getElementById('titleForm').style.pointerEvents = 'auto';
+
 
   let category = ""
 
@@ -13,6 +16,7 @@ const generateRandomNumber = function() {
   };
 
   $("#titleForm").submit("save", function (e) {
+    $("#titleTable").toggle();
     e.preventDefault();
 
     const title = $("#titleInput").val();
@@ -33,7 +37,7 @@ const generateRandomNumber = function() {
       }
 
     })
-
+    document.getElementById('map2').style.pointerEvents = 'auto';
   });
 
 });

@@ -70,7 +70,7 @@ app.post("/", (req, res) => {
 
 app.get("/editMap", (req, res) => {
   // console.log(req.cookies);
-  res.render("editMap");
+  res.render("/editMap");
 });
 
 app.post("/pins", (req, res) => {
