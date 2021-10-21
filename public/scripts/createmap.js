@@ -11,7 +11,6 @@ $(document).ready(function() {
   });
 
 
-
   $("#titleForm").submit("save", function (e) {
     $("#titleTable").toggle();
     e.preventDefault();
