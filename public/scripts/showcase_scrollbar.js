@@ -1,10 +1,5 @@
 // Client facing scripts here
-//scrolls our showcase left/right
 $(document).ready(function() {
-
-    // const data = {
-    //   category_name: category
-    // }
 
   $('#scrollButtonRight').click(function(event) {
     event.preventDefault();
@@ -29,10 +24,8 @@ $(document).ready(function() {
 });
 
 const renderMaps = function(maps) {
-  // console.log("maps:", maps)
-  // $("#showcase").empty();
+
   for (let map of maps) {
-    // console.log("map:", map)
     const element = createMapElement(map);
     $('#showcase').prepend(element);
   }
