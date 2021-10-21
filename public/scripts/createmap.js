@@ -20,18 +20,20 @@ const generateRandomNumber = function() {
       title,
       category_name: category
     }
-    return $.ajax({
+
+    $.ajax({
       type: "POST",
       data,
       url: "/maps",
       success: function (res) {
-        alert("Map has been saved!");
+        $("#map2").attr("mapId", res.id)
       },
       error: function () {
         console.log("there is some error");
       }
 
     })
+
   });
 
 });

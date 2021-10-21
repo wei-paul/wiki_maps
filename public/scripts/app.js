@@ -1,6 +1,3 @@
-// const { insertPin } = require("../../db/queries/map_queries");
-// const express = require("express");
-// const cookieSession = require('cookie-session');
 
 let map2, markerLocation;
 
@@ -8,7 +5,7 @@ $(document).ready(function() {
   let markerButton = true;
   let markerMode = false;
 
-  var vancouver = L.map('map2').setView([49.2827, -123.1207], 10);
+  let vancouver = L.map('map2').setView([49.2827, -123.1207], 10);
 
   L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -81,21 +78,5 @@ $(document).ready(function() {
   });
 
 
-
-  // ("#create_map").on("click", (event) => {
-
-  //   $.ajax({
-  //     type: "POST",
-  //     data: { category_name },
-  //     url: "/maps",
-  //   })
-  //   .done((res) => {
-  //     console.log(res);
-  //   })
-  //   .fail((err) => {
-  //     console.log("Error");
-
-  // })
-  // })
 
 });

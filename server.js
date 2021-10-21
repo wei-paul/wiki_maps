@@ -64,7 +64,6 @@ app.get('/login/:id', (req, res) => {
   res.redirect('/');
 });
 
-
 app.post("/", (req, res) => {
   res.redirect("/");
 });
@@ -81,6 +80,12 @@ app.post("/pins", (req, res) => {
 
 app.post("/maps", (req, res) => {
   insertMaps(req.body, req.cookies.user_id)
+  .then((result) => {
+    res.json(result);
+  })
+  .catch((err) => {
+
+  });
 });
 
 app.post("/editMap", (req, res) => {
