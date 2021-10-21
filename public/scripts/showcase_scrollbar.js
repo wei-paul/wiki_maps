@@ -18,7 +18,7 @@ $(document).ready(function() {
     method: "GET",
   }).then((res) => {
     renderMaps(res.maps);
-    console.log(res)
+    // console.log(res)
   });
 
 });
