@@ -20,7 +20,6 @@ const generateRandomNumber = function() {
       title,
       category_name: category
     }
-
     return $.ajax({
       type: "POST",
       data,
