@@ -10,10 +10,6 @@ $(document).ready(function() {
     $("#titleTable").show()
   });
 
-//Generate Random id (number)
-const generateRandomNumber = function() {
-  return Math.floor((Math.random() * 999999) + 100000)
-  };
 
   $("#titleForm").submit("save", function (e) {
     $("#titleTable").toggle();

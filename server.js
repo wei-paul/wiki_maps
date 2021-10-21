@@ -108,5 +108,3 @@ app.listen(PORT, () => {
 
 
 
-
-//https://media-cdn.tripadvisor.com/media/photo-s/09/f0/52/b1/burger-king.jpg
