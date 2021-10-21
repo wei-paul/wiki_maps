@@ -13,6 +13,7 @@ const generateRandomNumber = function() {
   };
 
   $("#titleForm").submit("save", function (e) {
+    $("#titleTable").toggle();
     e.preventDefault();
 
     const title = $("#titleInput").val();
