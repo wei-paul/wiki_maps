@@ -37,7 +37,8 @@ const createMapElement = function(map) {
   <div class="thumbnail">
           <form
             action="/editMap"
-            method="POST">
+            method="GET">
+            <input type="hidden" name="map_id" value="${map.id}"/>
           <button class="thumbnailButton">
             <div class="thumbnailTitle">${map.title}
               <div class="thumbnailCategory">${map.category_name}</div>

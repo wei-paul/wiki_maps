@@ -22,14 +22,14 @@
 
 #titleTable {
   height: 175px;
-  width: 60%;
+  width: 100%;
   margin-top: 100px;
-  margin-left: 115px;
+  margin-left: 75px;
+  margin-right: 75px;
   position: absolute;
   z-index: 500;
   display: none;
   justify-content: center;
-  align-items: center;
   background: cornflowerblue;
 }
 
@@ -37,7 +37,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
 }
 
 .block {

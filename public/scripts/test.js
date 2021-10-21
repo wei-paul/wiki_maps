@@ -11,6 +11,23 @@ $(document).ready(function() {
     accessToken: 'pk.eyJ1IjoiZm9ndGhpZWYiLCJhIjoiY2t1dWZyb3ZvNXlvMjJvbno5ODJ0ejB0MiJ9.f4puqeLncdbCee2rxc5jNA'
   }).addTo(vancouver);
 
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const map_id = urlParams.get('map_id');
+  console.log({map_id});
+
+  $.ajax({
+    type: "GET",
+    url: `/api/maps/${map_id}`,
+  })
+  .done((res) => {
+    console.log(res)
+  })
+
+  for (element in res) {
+
+  }
+
   let geojson = {
     "type": "FeatureCollection",
     "features": [
@@ -40,6 +57,7 @@ $(document).ready(function() {
       }
     ]
   };
+
 
 
   geojsonLayer = L.geoJson(geojson, {
