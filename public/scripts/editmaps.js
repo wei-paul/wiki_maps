@@ -29,14 +29,14 @@ $(document).ready(function() {
       $('#center_hideform').show();
       $(this).hide();
 
-      $("#map2").css("cursor", "")
+      $("#map3").css("cursor", "")
       newMarker.addTo(vancouver);
     }
   }
   $("#tag-information").submit(function(event) {
     console.log("testing is: ")
     event.preventDefault();
-    window.newMarker.bindPopup(`<div style="display: flex; align-items: center; flex-direction: column"><img width="120" height="120" src="${$(this).find("#Image-url-link").val()}"><h1>${$(this).find("#Tag-title").val()}</h1></div>`);
+    window.newMarker.bindPopup(`<b>${$(this).find("#Tag-title").val()}</b><img width="150" height="150" src="${$(this).find("#Image-url-link").val()}">`);
     $('#center_hideform').hide();
 
     let description = $(this).find("#Tag-title").val()
@@ -59,7 +59,7 @@ $(document).ready(function() {
 
   })
 
-  $("#pinIcon2").on("click", (event) => {
+  $("#pinIcon").on("click", (event) => {
     event.stopPropagation();
     if (markerButton) {
       $("#map2").css("cursor", "url(https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png) 12 43, move")
@@ -68,7 +68,4 @@ $(document).ready(function() {
     }
   });
 
-  $("#titleInput").on("click", (event) => {
-    event.stopPropagation();
-  })
 });

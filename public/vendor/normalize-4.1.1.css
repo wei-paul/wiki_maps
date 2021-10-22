@@ -30,18 +30,24 @@ body {
 
 article,
 aside,
-details, /* 1 */
+details,
+
 figcaption,
 figure,
 footer,
 header,
-main, /* 2 */
+main,
+
 menu,
 nav,
 section,
-summary { /* 1 */
+summary {
+
   display: block;
 }
+
+
+
 
 /**
  * Add the correct display in IE 9-.

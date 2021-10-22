@@ -4,7 +4,6 @@
 <head>
   <!-- Meta Information  -->
   <title>Wiki Maps</title>
-  <header>wikimap</header>
 
   <!-- External CSS -->
   <link
@@ -17,8 +16,18 @@
     integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
     crossorigin="">
   </script>
-
-
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"/>
+  <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com" crossorigin/>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+    integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"/>
 
   <!-- App CSS -->
   <link
@@ -41,8 +50,18 @@
     rel="stylesheet"
     href="/styles/showcase.css"
     type="text/css" />
+  <link
+    rel="stylesheet"
+    href="/styles/createmap.css"
+    type="text/css" />
+  <link
+    rel="stylesheet"
+    href="/styles/header.css"
+    type="text/css" />
 
   <!-- External JS -->
+
+
 
   <!-- App JS -->
   <script
@@ -53,38 +72,130 @@
     type="text/javascript"
     src="/scripts/app.js">
   </script>
+  <script
+    type="text/javascript"
+    src="/scripts/showcase_scrollbar.js">
+  </script>
+  <script
+    type="text/javascript"
+    src="/scripts/createmap.js">
+</script>
 </head>
 
 
 
 <body>
+
   <!-- Page Header -->
   <header
   id="page_head">
-  </header>
+  <span id="title_header">
+    A MORE SUPERIOR VERSION OF GOOGLE MAPS.
+  </span>
+</header>
 
-  <!-- Page-specific (main) content here -->
-  <main
-    class="container">
+<!-- Page-specific (main) content here -->
+<main
+class="main_container">
 
-    <!-- Showcase Horizontal Scroll -->
-    <div>
-      <section id="showcase">
-        <div class="thumbnail">text</div>
-        <div class="thumbnail">text2</div>
-        <div class="thumbnail">text3</div>
-      </section>
-     </div>
+<!-- Showcase Horizontal Scroll -->
+<div class="container">
+  <button
+  id="scrollButtonLeft">
+  <i class="fa-solid fa-angle-left"></i>
+</button>
+<div
+id="showcase">
 
-    <div>
-      <section
-        id="create_map">
-        <div
-          id="map"></div>
-      </section>
+</div>
+<button
+id="scrollButtonRight">
+<i class="fa-solid fa-angle-right"></i>
+</button>
+</section>
+</div>
+</div>
+
+<!-- CONTAINER for CONTAINING BUTTONS/INTERACTIVE MAPS -->
+<div class="container_box">
+  <div id="createmapbuttons">
+    <section id="create_map">
+      <!-- <div id="map"></div> -->
+      <button class="block" id="food">Food</button>
+      <button class="block" id="hikes">Hikes</button>
+      <button class="block" id="landmarks">Landmarks</button>
+      <button class="block" id="schools">Schools</button>
+      <button class="block" id="parks">Parks</button>
+    </section>
+
+  </div>
+  <div class="map_container">
+
+    <div id="titleTable">
+      <form
+        id="titleForm"
+        action="/"
+        method="POST">
+        <div>
+        <br>Title:
+        <input
+          id="titleInput"
+          type="text"
+          placeholder="Enter Title">
+        <br>Cover Photo:
+        <input
+          id="coverImageInput"
+          type="text"
+          placeholder="Image URL">
+          <br>
+        <input
+          type="submit"
+          value="Save"
+          id="saveButton">
+        </div>
+      </form>
     </div>
 
-    <div>
+    <div id="center_hideform">
+      <form action="/action_page.php" id="tag-information">
+          <br>Pin Name:
+          <input
+            type="text"
+            placeholder="Pin Name" id="Tag-title">
+          <br>
+          <br>Image URL:
+          <input
+            type="text"
+            placeholder="Image URL" id="Image-url-link">
+          <br><br>
+          <input
+            type="submit"  value="Insert Pin">
+      </form>
+    </div>
+
+        <div id="welcome_cover"
+             type="textarea"
+             value="bla"> WELCOME
+             <br><br><br>
+             Please select a category from the menu to start
+        </div>
+
+        <div id="map2">
+        <button id="pinIcon2">
+        <i class="fa-solid fa-map-pin"></i>
+        </button>
+        <!-- <button id="deleteIcon2">
+        <i class="fa-regular fa-trash-can"></i>
+        </button> -->
+
+
+
+
+
+
+
+    </div>
+
       <section
         id="footer">
       </section>
@@ -93,4 +204,13 @@
   </main>
 </body>
 
+  </div>
+
+  <br></br>
+  <br></br>
+  <br></br>
+
+  <footer>
+    <p class="copyright">© TEAM KPS</p>
+</footer>
 </html>

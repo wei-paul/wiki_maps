@@ -2,5 +2,34 @@
 
 body,
 html {
+  flex-direction: column;
   margin: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  height: 200px;
+  width: auto;
+  margin-right: 285px;
+  margin-left: 285px;
+}
+
+#welcome_cover {
+  display: flex;
+  font-family: "Monaco", Monospace;
+  text-align: center;
+  vertical-align: sub;
+  line-height: 1.8;
+  justify-content: center;
+  align-items: baseline;
+  position: absolute;
+  height: 250px;
+  z-index: 1700;
+  width: 300px;
+  // background: rgb(153, 217, 220);
+  border: solid rgba(84, 76, 55, 0.912);
+  background-color: #0093E9;
+  background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 70%);
 }

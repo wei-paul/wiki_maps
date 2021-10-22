@@ -1,0 +1,7 @@
+edit pins (INSERT INTO description)
+DELETE pins will delete pins inside map
+finding maps for users (user_id)
+homepage map showcase (maps will have to populate with map_id)
+adding pins will INSERT INTO the db (with location, user_id, description, and image)
+creating a new map will INSERT INTO the db (with user_id, category, title )
+
