@@ -88,48 +88,98 @@
 
   <!-- Page Header -->
   <header
-    id="page_head">
-    <span id="title_header">
-      A MORE SUPERIOR VERSION OF GOOGLE MAPS.
-    </span>
-  </header>
+  id="page_head">
+  <span id="title_header">
+    A MORE SUPERIOR VERSION OF GOOGLE MAPS.
+  </span>
+</header>
 
-  <!-- Page-specific (main) content here -->
-  <main
-    class="main_container">
+<!-- Page-specific (main) content here -->
+<main
+class="main_container">
 
-    <!-- Showcase Horizontal Scroll -->
-    <div class="container">
-    <button
-      id="scrollButtonLeft">
-      <i class="fa-solid fa-angle-left"></i>
-    </button>
-    <div
-      id="showcase">
+<!-- Showcase Horizontal Scroll -->
+<div class="container">
+  <button
+  id="scrollButtonLeft">
+  <i class="fa-solid fa-angle-left"></i>
+</button>
+<div
+id="showcase">
 
-     </div>
-     <button
-      id="scrollButtonRight">
-      <i class="fa-solid fa-angle-right"></i>
-    </button>
-  </section>
+</div>
+<button
+id="scrollButtonRight">
+<i class="fa-solid fa-angle-right"></i>
+</button>
+</section>
 </div>
 </div>
 
-    <!-- CONTAINER for CONTAINING BUTTONS/INTERACTIVE MAPS -->
-    <div class="container_box">
-      <div id="createmapbuttons">
-        <section id="create_map">
-          <!-- <div id="map"></div> -->
-          <button class="block" id="food">Food</button>
-          <button class="block" id="hikes">Hikes</button>
-          <button class="block" id="landmarks">Landmarks</button>
-          <button class="block" id="schools">Schools</button>
-          <button class="block" id="parks">Parks</button>
-        </section>
+<!-- CONTAINER for CONTAINING BUTTONS/INTERACTIVE MAPS -->
+<div class="container_box">
+  <div id="createmapbuttons">
+    <section id="create_map">
+      <!-- <div id="map"></div> -->
+      <button class="block" id="food">Food</button>
+      <button class="block" id="hikes">Hikes</button>
+      <button class="block" id="landmarks">Landmarks</button>
+      <button class="block" id="schools">Schools</button>
+      <button class="block" id="parks">Parks</button>
+    </section>
 
-      </div>
-      <div class="map_container">
+  </div>
+  <div class="map_container">
+
+    <div id="titleTable">
+      <form
+        id="titleForm"
+        action="/"
+        method="POST">
+        <div>
+        <br>Title:
+        <input
+          id="titleInput"
+          type="text"
+          placeholder="Enter Title">
+        <br>Cover Photo:
+        <input
+          id="coverImageInput"
+          type="text"
+          placeholder="Image URL">
+          <br>
+        <input
+          type="submit"
+          value="Save"
+          id="saveButton">
+        </div>
+      </form>
+    </div>
+
+    <div id="center_hideform">
+      <form action="/action_page.php" id="tag-information">
+          <br>Pin Name:
+          <input
+            type="text"
+            placeholder="Pin Name" id="Tag-title">
+          <br>
+          <br>Image URL:
+          <input
+            type="text"
+            placeholder="Image URL" id="Image-url-link">
+          <br><br>
+          <input
+            type="submit"  value="Insert Pin">
+      </form>
+    </div>
+
+        <div id="welcome_cover"
+             type="textarea"
+             value="bla"> WELCOME
+             <br><br><br>
+             Please select a category from the menu to start
+        </div>
+
         <div id="map2">
         <button id="pinIcon">
         <i class="fa-solid fa-map-pin"></i>
@@ -138,47 +188,10 @@
         <i class="fa-regular fa-trash-can"></i>
         </button>
 
-        <div id="center_hideform">
-          <form action="/action_page.php" id="tag-information">
-              <br>Pin Name:
-              <input
-                type="text"
-                placeholder="Tag title" id="Tag-title">
-              <br>
-              <br>Image URL:
-              <input
-                type="text"
-                placeholder="Image url link" id="Image-url-link">
-              <br><br>
-              <input
-                type="submit"  value="Insert Pin">
-          </form>
-        </div>
 
-      <div id="titleTable">
-        <form
-          id="titleForm"
-          action="/"
-          method="POST">
-          <div>
-          <br>Title:
-          <input
-            id="titleInput"
-            type="text"
-            placeholder="Title">
-          <br>Cover Photo:
-          <input
-            id="coverImageInput"
-            type="text"
-            placeholder="Cover Photo URL">
-            <br>
-          <input
-            type="submit"
-            value="Save"
-            id="saveButton">
-          </div>
-        </form>
-      </div>
+
+
+
 
 
     </div>

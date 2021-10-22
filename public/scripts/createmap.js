@@ -10,6 +10,9 @@ $(document).ready(function() {
     $("#titleTable").show()
   });
 
+  $('.block').on('click', function() {
+    $('#welcome_cover').hide()
+  } )
 
   $("#titleForm").submit("save", function (e) {
     $("#titleTable").toggle();
