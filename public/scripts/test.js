@@ -83,7 +83,14 @@ $(document).ready(function() {
   //   console.log(e.latlng);
   // });
 
-  let deleteButtonPress = true
+  let deleteButtonPress = false
+
+  $("#deleteIcon").on('click', (event) => {
+    event.stopPropagation();
+    $("#map2").css("cursor", "not-allowed")
+    deleteButtonPress = true
+  })
+
 
   vancouver.on('popupopen', function (e) {
     if (deleteButtonPress) {
@@ -102,6 +109,8 @@ $(document).ready(function() {
         console.log("Error");
       })
     }
+    $("#map2").css("cursor", "")
+    deleteButtonPress = false
   });
 
 
@@ -120,7 +129,7 @@ $(document).ready(function() {
       $(this).hide();
 
       $("#map2").css("cursor", "")
-      newMarker.addTo(vancouver);
+      newMarker.addTo(geojsonLayer);
     }
   }
 
