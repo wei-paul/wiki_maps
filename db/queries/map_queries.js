@@ -33,7 +33,7 @@ const insertMaps = function(maps, userId) {
     return null;
   });
 
-}
+};
 exports.insertMaps = insertMaps;
 
 const getMapPins = function(map_id) {
