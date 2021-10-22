@@ -11,7 +11,7 @@ const cookieParser = require("cookie-parser")
 // PG database client/connection setup
 const { Pool } = require("pg");
 const dbParams = require("./lib/db.js");
-const { insertPin, insertMaps, getMapPins } = require("./db/queries/map_queries.js")
+const { insertPin, insertMaps, getMapPins, deletePin } = require("./db/queries/map_queries.js")
 const db = new Pool(dbParams);
 db.connect();
 
@@ -94,6 +94,18 @@ app.get('/api/maps/:map_id', (req, res) => {
   getMapPins(req.params.map_id)
   .then((result) => {
     res.json(result);
+  })
+  .catch((err) => {
+
+  });
+})
+
+app.post("/deletePins", (req, res) => {
+  console.log(req)
+  deletePin(req.body.map_id, req.body.deleteLat, req.body.deleteLong)
+  .then((result) => {
+    console.log(result, "Hello im inside server")
+    res.sendStatus(200)
   })
   .catch((err) => {
 

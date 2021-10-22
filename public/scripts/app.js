@@ -36,7 +36,7 @@ $(document).ready(function() {
   $("#tag-information").submit(function(event) {
     console.log("testing is: ")
     event.preventDefault();
-    window.newMarker.bindPopup(`<b>${$(this).find("#Tag-title").val()}</b><img width="150" height="150" src="${$(this).find("#Image-url-link").val()}">`);
+    window.newMarker.bindPopup(`<div style="display: flex; align-items: center; flex-direction: column"><img width="120" height="120" src="${$(this).find("#Image-url-link").val()}"><h1>${$(this).find("#Tag-title").val()}</h1></div>`);
     $('#center_hideform').hide();
 
     let description = $(this).find("#Tag-title").val()
