@@ -1,11 +1,11 @@
 
-let map2, markerLocation;
+let map3, markerLocation;
 
 $(document).ready(function() {
   let markerButton = true;
   let markerMode = false;
 
-  let vancouver = L.map('map2').setView([49.2827, -123.1207], 10);
+  let vancouver = L.map('map3').setView([49.2827, -123.1207], 10);
 
   L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -29,7 +29,7 @@ $(document).ready(function() {
       $('#center_hideform').show();
       $(this).hide();
 
-      $("#map2").css("cursor", "")
+      $("#map3").css("cursor", "")
       newMarker.addTo(vancouver);
     }
   }
@@ -42,7 +42,7 @@ $(document).ready(function() {
     let description = $(this).find("#Tag-title").val()
     let image_url = $(this).find("#Image-url-link").val()
     markerButton= true;
-    let map_id = $('#map2').attr('mapid');
+    let map_id = $('#map3').attr('mapid');
     console.log("mapID:", map_id);
 
     $.ajax({
@@ -62,19 +62,10 @@ $(document).ready(function() {
   $("#pinIcon").on("click", (event) => {
     event.stopPropagation();
     if (markerButton) {
-      $("#map2").css("cursor", "url(https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png) 12 43, move")
+      $("#map3").css("cursor", "url(https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png) 12 43, move")
       markerButton = false;
       markerMode = true;
     }
   });
-
-  $('#deleteIcon').on('click', (event) => {
-    event
-  })
-
-  $("#titleInput").on("click", (event) => {
-    event.stopPropagation();
-
-  })
 
 });
