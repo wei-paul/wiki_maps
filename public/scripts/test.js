@@ -125,7 +125,7 @@ $(document).ready(function() {
       window.long = temp.latlng.lng
       window.lat = temp.latlng.lat
 
-      $('#center_hideform').show();
+      $('#center_hideform2').show();
       $(this).hide();
 
       $("#map2").css("cursor", "")
@@ -136,7 +136,7 @@ $(document).ready(function() {
   $("#tag-information").submit(function(event) {
     event.preventDefault();
     window.newMarker.bindPopup(`<div style="display: flex; align-items: center; flex-direction: column"><img width="120" height="120" src="${$(this).find("#Image-url-link").val()}"><h1>${$(this).find("#Tag-title").val()}</h1></div>`);
-    $('#center_hideform').hide();
+    $('#center_hideform2').hide();
 
     let description = $(this).find("#Tag-title").val()
     let image_url = $(this).find("#Image-url-link").val()

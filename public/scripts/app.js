@@ -59,7 +59,7 @@ $(document).ready(function() {
 
   })
 
-  $("#pinIcon").on("click", (event) => {
+  $("#pinIcon2").on("click", (event) => {
     event.stopPropagation();
     if (markerButton) {
       $("#map2").css("cursor", "url(https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png) 12 43, move")
@@ -68,13 +68,7 @@ $(document).ready(function() {
     }
   });
 
-  $('#deleteIcon').on('click', (event) => {
-    event
-  })
-
   $("#titleInput").on("click", (event) => {
     event.stopPropagation();
-
   })
-
 });
