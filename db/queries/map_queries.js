@@ -60,8 +60,19 @@ const grabAllMapFromUser = function(userId) {
 }
 exports.grabAllMapFromUser = grabAllMapFromUser
 
-const editpin = function() {
-  SELECT
-
+const deletePin = function(map_id, lat, long) {
+  return db
+  .query(`DELETE
+  FROM pins
+  WHERE map_id = $1 AND lat = $2 AND long = $3;`, [map_id, lat, long])
+  .then((result) => {
+    console("Hello")
+    return null;
+  })
+  .catch((err) => {
+    console.log(err.message);
+    return null;
+  });
 }
+exports.deletePin = deletePin
 
